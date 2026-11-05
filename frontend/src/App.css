@@ -1,0 +1,310 @@
+.expense-app {
+  --accent: #4f6df5;
+  --accent-hover: #3f5bd9;
+  --danger: #e5484d;
+  --line: rgba(128, 128, 128, 0.3);
+
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.expense-app h1 {
+  margin: 0 0 6px;
+  font-size: 30px;
+}
+
+.expense-app .subtitle {
+  margin: 0 0 28px;
+  opacity: 0.65;
+  font-size: 15px;
+}
+
+.expense-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 14px;
+  padding: 24px;
+  margin-bottom: 32px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.expense-form .form-title {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.expense-form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.expense-form .field.full {
+  grid-column: 1 / -1;
+}
+
+.expense-form .field span {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+.expense-form input,
+.expense-form select,
+.filter-container select,
+.filter-container input {
+  padding: 11px 13px;
+  font: inherit;
+  font-size: 15px;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.expense-form input::placeholder,
+.expense-form select option[value=""] {
+  color: inherit;
+  opacity: 0.4;
+}
+
+.expense-form input:focus,
+.expense-form select:focus,
+.filter-container select:focus,
+.filter-container input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79, 109, 245, 0.22);
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.expense-app button {
+  padding: 10px 20px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.expense-app button:hover {
+  background: rgba(128, 128, 128, 0.12);
+}
+
+.expense-app button:active {
+  transform: scale(0.97);
+}
+
+.expense-app .btn-primary {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.expense-app .btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.expense-app .btn-delete {
+  color: var(--danger);
+  border-color: rgba(229, 72, 77, 0.5);
+}
+
+.expense-app .btn-delete:hover {
+  color: #fff;
+  background: var(--danger);
+  border-color: var(--danger);
+}
+
+.list-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.filter-container {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+  padding: 18px;
+  background: #1d2027;
+  border: 1px solid #2b303b;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.filter-container label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.75;
+  margin-bottom: 6px;
+}
+
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.expense-item:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.expense-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.expense-title {
+  font-weight: 600;
+}
+
+.expense-meta {
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+.expense-amount {
+  font-weight: 700;
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.expense-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.expense-buttons button {
+  padding: 7px 14px;
+}
+
+@media (max-width: 600px) {
+  .expense-form {
+    grid-template-columns: 1fr;
+  }
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .expense-item {
+    flex-wrap: wrap;
+  }
+  .expense-info {
+    flex-basis: 100%;
+  }
+}
+
+html,
+body,
+#root {
+  background: #14161b;
+  color: #e8eaf0;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h1,
+h2 {
+  color: #e8eaf0;
+}
+
+.expense-app {
+  color-scheme: dark;
+  color: #e8eaf0;
+  background: transparent;
+}
+
+.expense-app h1,
+.expense-app h2 {
+  color: #e8eaf0;
+}
+
+.expense-form {
+  background: #1d2027;
+  border-color: #2b303b;
+}
+
+.expense-form input,
+.expense-form select,
+.filter-container select,
+.filter-container input {
+  color: #e8eaf0;
+  background: #14161b;
+  border-color: #333947;
+}
+
+.expense-form input::placeholder {
+  color: #e8eaf0;
+  opacity: 0.4;
+}
+
+.expense-item {
+  background: #1d2027;
+  border-color: #2b303b;
+}
+
+.expense-app button {
+  color: #e8eaf0;
+  background: #262a33;
+  border-color: #333947;
+}
+
+.expense-app button:hover {
+  background: #2f3441;
+}
+
+.expense-app .btn-primary {
+  color: #ffffff;
+  background: #4f6df5;
+  border-color: #4f6df5;
+}
+
+.expense-app .btn-primary:hover {
+  background: #6580ff;
+  border-color: #6580ff;
+}
+
+.expense-app .btn-delete {
+  color: #ff6b70;
+  border-color: rgba(255, 107, 112, 0.5);
+}
+
+.expense-app .btn-delete:hover {
+  color: #ffffff;
+  background: #e5484d;
+  border-color: #e5484d;
+}

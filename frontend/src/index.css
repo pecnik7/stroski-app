@@ -1,0 +1,164 @@
+.expense-app {
+  --bg: #ffffff;
+  --card: #f6f7fb;
+  --text: #1f2430;
+  --muted: #6b7280;
+  --border: #e2e5ee;
+  --primary: #4f6df5;
+  --primary-hover: #3b56d9;
+  --danger: #e5484d;
+  --danger-hover: #c93a3f;
+
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  color: var(--text);
+  text-align: left;
+}
+
+@media (prefers-color-scheme: dark) {
+  .expense-app {
+    --bg: #16181d;
+    --card: #1f232b;
+    --text: #e8eaf0;
+    --muted: #9aa3b2;
+    --border: #2d323d;
+  }
+}
+
+.expense-app h1 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  position: center;
+}
+
+/* Obrazec */
+.expense-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 28px;
+}
+
+.expense-form input {
+  padding: 10px 12px;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.expense-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 109, 245, 0.2);
+}
+
+.expense-form .full {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+}
+
+/* Gumbi */
+.expense-app button {
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.expense-app button:hover {
+  background: var(--primary-hover);
+}
+
+.expense-app button:active {
+  transform: scale(0.97);
+}
+
+.expense-app .btn-delete {
+  background: var(--danger);
+}
+
+.expense-app .btn-delete:hover {
+  background: var(--danger-hover);
+}
+
+.expense-app .btn-edit {
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+}
+
+.expense-app .btn-edit:hover {
+  background: var(--card);
+}
+
+/* Seznam */
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.expense-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.expense-title {
+  font-weight: 600;
+}
+
+.expense-meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.expense-amount {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.expense-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+/* Telefon */
+@media (max-width: 600px) {
+  .expense-form {
+    grid-template-columns: 1fr;
+  }
+  .expense-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
